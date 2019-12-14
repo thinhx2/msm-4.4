@@ -1337,6 +1337,7 @@ static int ovs_flow_cmd_del(struct sk_buff *skb, struct genl_info *info)
 	}
 
 out_free:
+
 	ovs_flow_free(flow, true);
 	return 0;
 unlock:

@@ -693,7 +693,7 @@ int add_mtd_partitions(struct mtd_info *master,
 			free_partition(slave);
 			goto err_del_partitions;
 		}
-
+		
 		mtd_add_partition_attrs(slave);
 
 		cur_offset = slave->offset + slave->mtd.size;

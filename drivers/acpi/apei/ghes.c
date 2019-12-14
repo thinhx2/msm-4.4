@@ -221,6 +221,8 @@ static int ghes_estatus_pool_expand(unsigned long len)
 	if (size >= ghes_estatus_pool_size_request)
 		return 0;
 
+}
+
 	addr = (unsigned long)vmalloc(PAGE_ALIGN(len));
 	if (!addr)
 		return -ENOMEM;
@@ -232,8 +234,6 @@ static int ghes_estatus_pool_expand(unsigned long len)
 	vmalloc_sync_all();
 
 	return gen_pool_add(ghes_estatus_pool, addr, PAGE_ALIGN(len), -1);
-}
-
 static struct ghes *ghes_new(struct acpi_hest_generic *generic)
 {
 	struct ghes *ghes;

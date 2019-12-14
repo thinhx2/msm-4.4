@@ -763,6 +763,7 @@ static struct device_type mei_cl_device_type = {
  * mei_cl_bus_set_name - set device name for me client device
  *  <controller>-<client device>
  *  Example: 0000:00:16.0-55213584-9a29-4916-badf-0fb7ed682aeb
+ * 
  *
  * @cldev: me client device
  */

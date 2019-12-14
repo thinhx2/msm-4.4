@@ -186,7 +186,7 @@ void kvm_arch_hardware_unsetup(void)
 int kvm_arch_init(void *opaque)
 {
 	int rc;
-
+	
 	kvm_s390_dbf = debug_register("kvm-trace", 32, 1, 7 * sizeof(long));
 	if (!kvm_s390_dbf)
 		return -ENOMEM;

@@ -218,7 +218,6 @@ static int hid_add_usage(struct hid_parser *parser, unsigned usage, u8 size)
 		hid_err(parser->device, "usage index exceeded\n");
 		return -1;
 	}
-	parser->local.usage[parser->local.usage_index] = usage;
 
 	/*
 	 * If Usage item only includes usage id, concatenate it with
@@ -227,6 +226,7 @@ static int hid_add_usage(struct hid_parser *parser, unsigned usage, u8 size)
 	if (size <= 2)
 		complete_usage(parser, parser->local.usage_index);
 
+	parser->local.usage[parser->local.usage_index] = usage;
 	parser->local.usage_size[parser->local.usage_index] = size;
 	parser->local.collection_index[parser->local.usage_index] =
 		parser->collection_stack_ptr ?

@@ -1637,7 +1637,6 @@ static void _rtl92e_hard_data_xmit(struct sk_buff *skb, struct net_device *dev,
 						 priv->rtllib->tx_headroom);
 		priv->rtllib->stats.tx_packets++;
 	}
-
 	if (ret != 0)
 		kfree_skb(skb);
 }
